@@ -1,0 +1,27 @@
+/*
+Given the head of a linked list, return the node where the cycle begins.
+If there is no cycle , return null.
+
+Input: head = [3,2,0,-4] pos = 1
+Output:  tail connects to node index 1
+*/
+class Solution{
+  public:
+  ListNode*detectCycle(ListNode*head){
+    ListNode*slow = head, *fast = head;
+    while(fast != NULL && fast->next!=NULL){
+         slow = slow->next;
+         fast = fast->next->next;
+         if(slow == fast)
+         break;
+     }
+     if(!(fast && fast->next)){ 
+        return NULL;
+     }
+     while(head != slow){
+      head = head->next;
+      slow = slow->next;
+     }
+     return head;
+     }
+};
