@@ -1,0 +1,18 @@
+/*
+Given the root of the Binary Tree that consists exactly of three nodes: the root, its leftchild and its rightchild.
+Return true if the value of the root is equal to the value of its children, otherwise retrun false.
+
+Input:
+root = [10,4,6]
+Output:
+true
+*/
+class Solution{
+  public:
+   bool checkTree(TreeNode*root){
+     if(root->left->val + root->right->val  == root->val){
+        return true;
+     }
+        return false;
+    }
+ };
