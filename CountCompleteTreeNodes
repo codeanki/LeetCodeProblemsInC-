@@ -1,0 +1,21 @@
+/*
+Given the root of a complete Binary Tree, return the number of nodes in the tree.
+Input1:
+root =[]
+Output1:
+0
+
+Input2:
+root =[1.2]
+Output2:
+2
+*/
+class Solution{
+ public:
+ int countNodes(TreeNode*root){
+   if(root == NULL){
+      return 0;
+    }
+   return 1 + countNodes(root->left) + countNodes(root->right);
+ }
+};
