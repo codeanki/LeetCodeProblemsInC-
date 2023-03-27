@@ -16,8 +16,8 @@ class Solution{
      answer.push_back(root->val);
      inorder(root->right):
    }
-   vector<int> preorderTraversal(TreeNode*root){
-     preorder(root);
+   vector<int> inOrderTraversal(TreeNode*root){
+     inorder(root);
      return answer;
    }
 };
