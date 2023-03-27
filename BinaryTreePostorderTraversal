@@ -1,0 +1,23 @@
+/*
+Given the root of a binary tree, return the postorder traveral of its node's values
+Input: root = [1,null,2,3]
+Output: [1,2,3]
+*/
+
+class Solution{
+  public:
+  vector<int> answer;
+  void postorder(TreeNode*root){
+     if(root == NULL){
+       return;
+     }
+     postorder(root->left);
+     postorder(root->right);
+     answer.push_back(root->val);
+  }
+  vector<int> postOrderTraversal(TreeNode*root){
+   postorder(root);
+   return answer;
+   }
+};
+     
