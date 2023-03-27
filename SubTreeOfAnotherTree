@@ -1,0 +1,36 @@
+/*
+Given the roots of two Binary Trees root and subRoot, return true if there is a subtree
+of root with the same structure and node values of subRoot and false otherwise.
+
+Input:
+root = [3,4,5,1,2], subRoot = [4,1,2]
+Output:
+true
+
+*/
+class Solution{
+  private:
+  bool isIdentical(TreeNode*a, TreeNode*b){
+    if(a == NULL && b == NULL){
+       return true;
+    }
+    if(a == NULL || b == NULL){
+      return false;
+    }
+    return (a->val == b->val && isIdentical(a->left, b->left) && isIdentical(a->right, b->right));
+  }
+  public:
+  bool isSubtree(TreeNode*root, TreeNode*subRoot){
+    if(subRoot == NULL){
+      return true;
+    if(root == NULL){
+       return false;
+    }
+    if(isIdentical(root,subRoot)){
+      return true;
+    }
+   
+   return isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot);
+}
+};
+   
