@@ -1,0 +1,23 @@
+/*
+Given the roor of the Binary Tree, return the preorder traversal of the node's values
+Input: root = [1,null,23]
+Output:[1,2,3]
+
+*/
+
+class Solution{
+   public:
+   vector<int> answer;
+   void preorder(TreeNode*root){
+     if(root == NULL){
+       return;
+     }
+     answer.push_back(root->val);
+     preorder(root->left);
+     preorder(root->right);
+   }
+   vector<int> preorderTraversal(TreeNode*root){
+    preorder(root);
+    return answer;
+    }
+}
